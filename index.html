@@ -2,28 +2,103 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>金融アンケート</title>
+    <title>金融アンケート調査</title>
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <div class="container">
         <form id="surveyForm" action="submit.html" method="post">
+            <p>これは収入に関するアンケートです。回答に困った場合には「その他」に入れてください。</p>
             <!-- ページ1 -->
             <div class="page" id="page1">
-                <h2>金融アンケート - ページ 1</h2>
-                <label for="q1">1. 質問1をここに入力:</label>
-                <input type="text" id="q1" name="q1" required>
+                <h2>金融アンケート調査 - ページ 1</h2>
+                <label for="q1">1. 仕事をしていますか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q1" name="q1" required>
+                    <option value="">選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
                 
-                <label for="q2">2. 質問2をここに入力:</label>
-                <input type="text" id="q2" name="q2" required>
+                <label for="q2">2. どのような立場ですか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q2" name="q2" required>
+                    <option value="">選択してください</option>
+                    <option value="会社の正社員">会社の正社員</option>
+                    <option value="派遣社員">派遣社員</option>
+                    <option value="アルバイト">アルバイト</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
                 
-                <label for="q3">3. 質問3をここに入力:</label>
-                <input type="text" id="q3" name="q3" required>
+                <label for="q3">3. 仕事等の収入（年収）はいくらほどですか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q3" name="q3" required>
+                    <option value="">選択してください</option>
+                    <option value="0から100万円">0から100万円</option>
+                    <option value="100～500万円">100～500万円</option>
+                    <option value="500～1000万円">500～1000万円</option>
+                    <option value="1000万以上">1000万以上</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
                 
-                <label for="q4">4. 質問4をここに入力:</label>
-                <input type="text" id="q4" name="q4" required>
+                <label for="q4">4. 今の収入に満足していますか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q4" name="q4" required>
+                    <option value="">選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
                 
                 <button type="button" onclick="showPage(2)">次へ</button>
             </div>
             
-      
+            <!-- ページ2 -->
+            <div class="page" id="page2" style="display:none;">
+                <h2>金融アンケート調査 - ページ 2</h2>
+                <label for="q5">5. 収入を副業等を行ってより増やしたいと考えていますか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q5" name="q5" required>
+                    <option value="">選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+                
+                <label for="q6">6. 収入を増やすために副業等をしていますか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q6" name="q6" required>
+                    <option value="">選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+                
+                <label for="q7">7. 投資には興味ありますか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q7" name="q7" required>
+                    <option value="">選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+                
+                <label for="q8">8. 投資で稼ぐ自信はありますか？返答を以下の選択肢から1つ選んでください:</label>
+                <select id="q8" name="q8" required>
+                    <option value="">選択してください</option>
+                    <option value="はい">はい</option>
+                    <option value="いいえ">いいえ</option>
+                    <option value="答えられない">答えられない</option>
+                    <option value="その他">その他</option>
+                </select>
+                
+                <button type="button" onclick="showPage(1)">戻る</button>
+                <button type="submit">送信</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
