@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>金融アンケート</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <form id="surveyForm" action="submit.html" method="post">
+            <!-- ページ1 -->
+            <div class="page" id="page1">
+                <h2>金融アンケート - ページ 1</h2>
+                <label for="q1">1. 質問1をここに入力:</label>
+                <input type="text" id="q1" name="q1" required>
+                
+                <label for="q2">2. 質問2をここに入力:</label>
+                <input type="text" id="q2" name="q2" required>
+                
+                <label for="q3">3. 質問3をここに入力:</label>
+                <input type="text" id="q3" name="q3" required>
+                
+                <label for="q4">4. 質問4をここに入力:</label>
+                <input type="text" id="q4" name="q4" required>
+                
+                <button type="button" onclick="showPage(2)">次へ</button>
+            </div>
+            
+            <!-- ページ2 -->
+            <div class="page" id="page2" style="display:none;">
+                <h2>金融アンケート - ページ 2</h2>
+                <label for="q5">5. 質問5をここに入力:</label>
+                <input type="text" id="q5" name="q5" required>
+                
+                <label for="q6">6. 質問6をここに入力:</label>
+                <input type="text" id="q6" name="q6" required>
+                
+                <label for="q7">7. 質問7をここに入力:</label>
+                <input type="text" id="q7" name="q7" required>
+                
+                <label for="q8">8. 質問8をここに入力:</label>
+                <input type="text" id="q8" name="q8" required>
+                
+                <button type="button" onclick="showPage(1)">戻る</button>
+                <button type="submit">送信</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
