@@ -2,133 +2,17 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <title>金融アンケート調査</title>
+    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ファイナンスサイト</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
+            font-size: 18px;
+            line-height: 1.8;
             margin: 0;
             padding: 0;
             background-color: #e0f7fa; /* 薄い青の背景色 */
-        }
-
-        header {
-            background-color: #006064; /* 濃い青緑色 */
-            color: white;
-            padding: 1rem 0;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 1rem;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #ffeb3b; /* 黄色 */
-        }
-
-        main {
-            padding: 2rem;
-        }
-
-        section {
-            margin-bottom: 2rem;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        #home {
-            background-color: #b2ebf2; /* 薄い青緑色 */
-        }
-
-        #about {
-            background-color: #e1f5fe; /* 薄い青色 */
-        }
-
-        #services {
-            background-color: #b3e5fc; /* 薄い青色 */
-        }
-
-        #survey {
-            background-color: #b2dfdb; /* 薄い緑色 */
-        }
-
-        #contact {
-            background-color: #c8e6c9; /* 薄い緑色 */
-        }
-
-        section h2 {
-            color: #006064; /* 濃い青緑色 */
-            border-bottom: 2px solid #006064;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-        }
-
-        .survey-box {
-            border: 2px solid #006064; /* 濃い青緑色の枠線 */
-            background-color: #b2ebf2; /* 薄い青緑色の背景色 */
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .survey-box:hover {
-            transform: scale(1.05);
-        }
-
-        .survey-link {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: 0.5rem 1rem;
-            color: white;
-            background-color: #006064; /* 濃い青緑色 */
-            text-decoration: none;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s, box-shadow 0.3s;
-            font-size: 1rem;
-        }
-
-        .survey-link:hover {
-            background-color: #004d40; /* さらに濃い青緑色 */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        footer {
-            background-color: #006064; /* 濃い青緑色 */
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .container {
@@ -138,6 +22,11 @@
             background-color: #ffffff; /* 白色の背景色 */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #006064; /* 濃い青緑色 */
+            margin-bottom: 1rem;
         }
 
         .question {
@@ -214,28 +103,17 @@
         .line-friend a:hover {
             background-color: #009900; /* さらに濃い緑色 */
         }
-
-        p, ul {
-            margin: 0 0 1rem 0;
-        }
-
-        ul {
-            padding-left: 1.5rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
     </style>
 </head>
-
-    </main>
-    <div id="surveyPage" class="container" style="display: none;">
-        <div class="intro">
+<body>
+    <div class="container">
+        <!-- 最初のページ -->
+        <div id="introPage" class="intro">
             <h2>投資アンケート診断へようこそ</h2>
             <p>このアンケートは、あなたの投資に関する考えや状況を理解するためのものです。アンケートに答えることで、最適な投資プランを提案いたします。</p>
             <button type="button" onclick="showPage('page1')">アンケートを始める</button>
         </div>
+
         <form id="surveyForm" action="javascript:void(0);" method="post" onsubmit="showThankYouMessage()" style="display: none;">
             <!-- ページ 1 -->
             <div id="page1">
@@ -356,9 +234,7 @@
             </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2025 ファイナンスサイト. 全著作権所有.</p>
-    </footer>
+    
     <script>
         function showPage(pageId) {
             document.getElementById('introPage').style.display = 'none';
@@ -375,4 +251,8 @@
 
         function showThankYouMessage() {
             document.getElementById('surveyForm').style.display = 'none';
-            document.getElementBy
+            document.getElementById('thankYouMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>　
