@@ -67,11 +67,42 @@
             justify-content: space-between;
             margin-top: 1.5rem;
         }
+
+        .thank-you {
+            display: none;
+            text-align: center;
+        }
+
+        .thank-you h2 {
+            color: #006064; /* 濃い青緑色 */
+        }
+
+        .line-friend {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .line-friend a {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            color: white;
+            background-color: #00c300; /* LINE緑 */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+
+        .line-friend a:hover {
+            background-color: #009900; /* さらに濃い緑色 */
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <form id="surveyForm" action="submit.html" method="post">
+        <form id="surveyForm" action="javascript:void(0);" method="post" onsubmit="showThankYouMessage()">
             <!-- ページ 1 -->
             <div id="page1">
                 <p>これは収入に関するアンケートです。回答に困った場合には「その他」に入れてください。</p>
@@ -181,12 +212,26 @@
                 </div>
             </div>
         </form>
+        
+        <!-- ありがとうメッセージ -->
+        <div id="thankYouMessage" class="thank-you">
+            <h2>アンケートありがとうございました</h2>
+            <p>あなたのおすすめの投資プランはこちら：</p>
+            <div class="line-friend">
+                <a href="https://line.me/R/ti/p/%40linefriends" target="_blank">LINEで友だち追加</a>
+            </div>
+        </div>
     </div>
     
     <script>
         function showPage(pageNumber) {
             document.getElementById('page1').style.display = pageNumber === 1 ? 'block' : 'none';
             document.getElementById('page2').style.display = pageNumber === 2 ? 'block' : 'none';
+        }
+
+        function showThankYouMessage() {
+            document.getElementById('surveyForm').style.display = 'none';
+            document.getElementById('thankYouMessage').style.display = 'block';
         }
     </script>
 </body>
